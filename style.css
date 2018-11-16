@@ -23,8 +23,9 @@ h1 {
     justify-content: center;
     font-family: breedFont;
     font-size: 100px;
-    border-block-end: 100px;
+    margin-top: 37px;
     text-decoration: underline;
+
 }
 
 #button {
