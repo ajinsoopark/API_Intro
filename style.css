@@ -1,0 +1,73 @@
+@font-face {
+    font-family: dogFont;
+    src: url(KR\ Nicks\ Puppy\ 1.ttf)
+}
+
+@font-face {
+    font-family: breedFont;
+    src: url(PuppyBellies.ttf)
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0px 0px 0px 0px;
+    background: linear-gradient(to bottom,#3C5A96, white);
+    height: 100%;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: breedFont;
+    font-size: 100px;
+    border-block-end: 100px;
+    text-decoration: underline;
+}
+
+#button {
+    height: 50px;
+    width: 120px;
+    font-size: 18px;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: breedFont;
+    background: linear-gradient(to bottom, #C69632, #FCF4AB, #E2C260);
+    border-radius: 7px;
+    outline: 0px;
+    background: 0.8s;
+    box-shadow: 0 4px 10px #333333;
+    cursor: pointer;
+    transition: 0.6s;
+    overflow: hidden;
+}
+
+#button:hover {
+    background: linear-gradient(to bottom, #E2C260, #FCF4AB, #C69632);
+    transition: 0.7s;
+}
+
+#dogGif {
+    height: 177px;
+    width: 200px;
+}
+
+#gifHeader {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#buttonDiv {
+    display: flex;
+    justify-content: center;
+    
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    font-family: breedFont;
+    font-size: 50px;
+    font: bolder;
+}

@@ -26,51 +26,62 @@ const APIResponse = { "status": "success", "message": { "affenpinscher": [], "af
 let breedList = [];
 const originalBreedObj = APIResponse['message'];
 let button = document.getElementById('button');
-// let randomNum = Math.floor(Math.random() * breedList.length);
 let body = document.querySelector('body');
 let count = 0;
 let dogDiv;
+
+    for (let key in originalBreedObj){
+
+        if (originalBreedObj[key].length === 0) {
+            let cappedKey = capitalizeFirstChar(key);
+            breedList.push(cappedKey);
+
+        } else if (originalBreedObj[key].length > 0) {
+            let breedTypesArr = originalBreedObj[key];
+
+            for (let i = 0; i < breedTypesArr.length; i++) {
+                breedList.push(`${capitalizeFirstChar(breedTypesArr[i])} ${capitalizeFirstChar(key)}`);
+            }
+        }   
+        }
 
     function capitalizeFirstChar (str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     };
     
     function displayRandomBreed () {
-        let randomBreed = document.createElement('div');
+        let randomBreed = document.createElement('p');
         randomBreed.innerText = breedList[Math.floor(Math.random() * breedList.length)];
         body.appendChild(randomBreed);
 
     };
 
-        function replaceBreed () {
-            body.removeChild(dogDiv)
-            return displayRandomBreed();
-        }
+    function replaceBreed () {
+        body.removeChild(dogDiv);
+        return displayRandomBreed();
+    };
 
-    for (let key in originalBreedObj){
-    if (originalBreedObj[key].length === 0) {
-        let cappedKey = capitalizeFirstChar(key)
-        breedList.push(cappedKey);
-      } else if (originalBreedObj[key].length > 0) {
-          let breedTypesArr = originalBreedObj[key];
+    function changeButton () {
+        return button.innerText = 'Another one!'
+    };
 
-        for (let i = 0; i < breedTypesArr.length; i++) {
-            breedList.push(`${capitalizeFirstChar(breedTypesArr[i])} ${capitalizeFirstChar(key)}`)
-        }
-      }   
-    }
+
+    button.addEventListener('mouseover', () => {
+
+    })
 
     button.addEventListener('click', () => {
 
         if (count === 0) {
             displayRandomBreed();
-            dogDiv = document.querySelector('div');
+            dogDiv = document.querySelector('p');
+            changeButton();
+
         } else {
             replaceBreed();
-            dogDiv = document.querySelector('div');
+            dogDiv = document.querySelector('p');
         }
-    count++
-    })
 
-
-})
+    count++;
+    });
+});
